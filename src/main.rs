@@ -2,6 +2,7 @@
 
 use crate::ai_services::asst::{ load_or_create, CreateConfig};
 use crate::ai_services::new_openai_client;
+use dotenv::dotenv;
 // region: Modules
 mod ai_services;
 mod error;
@@ -11,6 +12,7 @@ pub use self::error::{Error, Result};
 // endregion: Modules
 #[tokio::main]
 async fn main() {
+    dotenv().ok();
     match start().await {
         Ok(()) => println!("bye"),
         Err(e) => println!("error: {}", e),
