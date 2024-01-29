@@ -1,5 +1,5 @@
 name="Jawn"
-model="gpt-3.5-turbo-1106"
+model="gpt-3.5-turbo"
 instruction_file="instruction.md"
 
 [[file_bundles]]

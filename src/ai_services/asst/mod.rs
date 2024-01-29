@@ -61,7 +61,6 @@ pub async fn create_assistant(
         .create(CreateAssistantRequest {
             model: config.model,
             name: Some(config.name),
-            tools: Some(vec![AssistantToolsRetrieval::default().into()]),
             ..Default::default()
         })
         .await?;
@@ -194,4 +193,6 @@ pub async fn get_first_thread_msg_content(
     let text_content = get_text_content(msg)?;
     Ok(text_content)
 }
+// endregion: Thread
+
 // endregion: Thread
